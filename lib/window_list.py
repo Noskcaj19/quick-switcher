@@ -55,9 +55,6 @@ class WindowList:
         self.windows[window.id].caption = window.caption
         self.signals.changed.emit()
 
-    def __getitem__(self, idx) -> Window | None:
-        return self.windows.get(self.order[idx])
-
     def ordered_windows(self) -> List[Window]:
         out = []
         for i in self.order:
